@@ -1,0 +1,393 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+}
+
+.text {
+    text-align: center;
+    margin-top: 1.5em;
+    font-size: 50px;
+    background-color: #6c5b8bce;
+    font-weight: bold;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+body {
+    background-image: url('birthday.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.birthday-gift {
+    position: relative;
+    top: 50px;
+    /* Lowering down by 50px */
+}
+
+.birthday-gift:before {
+    content: "";
+    position: absolute;
+    width: 340px;
+    /* 170px * 2 */
+    height: 40px;
+    /* 20px * 2 */
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 180px;
+    /* 90px * 2 */
+    left: -20px;
+    /* -10px * 2 */
+}
+
+input#click {
+    display: none;
+}
+
+.gift {
+    position: relative;
+    width: 300px;
+    /* 150px * 2 */
+    height: 200px;
+    /* 100px * 2 */
+    background-color: #e9c46a;
+}
+
+.gift:before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    /* 25px * 2 */
+    height: 200px;
+    /* 100px * 2 */
+    background-color: #e76f51;
+    left: 124px;
+    /* 62px * 2 */
+}
+
+.gift:after {
+    content: "";
+    position: absolute;
+    box-shadow: inset 0 20px rgba(0, 0, 0, 0.3);
+    /* inset 0 10px rgba(0, 0, 0, 0.3) */
+    width: 300px;
+    /* 150px * 2 */
+    height: 200px;
+    /* 100px * 2 */
+}
+
+.click {
+    position: absolute;
+    background-color: #e9c46a;
+    width: 340px;
+    /* 170px * 2 */
+    height: 80px;
+    /* 40px * 2 */
+    top: -80px;
+    /* -40px * 2 */
+    left: -20px;
+    /* -10px * 2 */
+    transform-origin: bottom left;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.click:before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    /* 25px * 2 */
+    height: 80px;
+    /* 40px * 2 */
+    background-color: #e76f51;
+    left: 138px;
+    /* 69px * 2 */
+}
+
+.click:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    /* 5px * 2 */
+    height: 0;
+    border-bottom: 60px solid #e76f51;
+    /* border-bottom: 30px solid #e76f51 */
+    border-top: 60px solid #e76f51;
+    /* border-top: 30px solid #e76f51 */
+    border-left: 0px solid transparent;
+    border-right: 60px solid transparent;
+    /* border-right: 30px solid transparent */
+    transform: rotate(-90deg);
+    left: 130px;
+    /* 65px * 2 */
+    top: -94px;
+    /* -47px * 2 */
+}
+
+#click:checked+.click {
+    transform: rotate(-110deg) scaleX(0.85);
+}
+
+.wishes {
+    position: absolute;
+    transition: .5s;
+    color: #333;
+    font-size: x-large;
+    font-weight: bold;
+
+    /* Removing font size to avoid space between images */
+    text-align: center;
+    z-index: -1;
+    left: 10px;
+    /* 5px * 2 */
+}
+
+.wishes img {
+    width: 110px;
+    /* Adjust the width as needed */
+    height: 100px;
+    /* Adjust the height as needed */
+    margin: 1em 10px;
+
+    border: 1px solid black;
+    /* Adjust the margin as needed */
+}
+
+#click:checked~.wishes {
+    transform: translateY(-200px);
+    /* -100px * 2 */
+}
+
+#click:checked~.sparkles {
+    display: block;
+}
+
+.sparkles {
+    position: absolute;
+    display: none;
+    top: -30px;
+    /* -15px * 2 */
+    z-index: -2;
+    left: 80px;
+    /* 40px * 2 */
+}
+
+.spark1,
+.spark2,
+.spark3,
+.spark4,
+.spark5,
+.spark6 {
+    position: absolute;
+    background-color: #fee440;
+    border-radius: 50%;
+    top: -18px;
+    /* -9px * 2 */
+    z-index: -1;
+}
+
+.spark1 {
+    width: 16px;
+    /* 8px * 2 */
+    height: 16px;
+    /* 8px * 2 */
+    left: 60px;
+    /* 30px * 2 */
+    top: -18px;
+    /* -9px * 2 */
+    animation: fire 0.9s ease-in-out infinite, color 0.4s linear infinite;
+}
+
+.spark1:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    /* 5px * 2 */
+    height: 10px;
+    /* 5px * 2 */
+    top: 16px;
+    /* 8px * 2 */
+    left: 22px;
+    /* 11px * 2 */
+    background-color: #fee440;
+    border-radius: 50%;
+}
+
+.spark2 {
+    width: 18px;
+    /* 9px * 2 */
+    height: 18px;
+    /* 9px * 2 */
+    left: 66px;
+    /* 33px * 2 */
+    top: -10px;
+    /* -5px * 2 */
+    animation: fire2 0.28s ease-in-out infinite, color 0.4s linear infinite;
+}
+
+.spark2:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    /* 5px * 2 */
+    height: 10px;
+    /* 5px * 2 */
+    top: 24px;
+    /* 12px * 2 */
+    left: 6px;
+    /* 3px * 2 */
+    background-color: #fee440;
+    border-radius: 50%;
+}
+
+.spark3 {
+    width: 17px;
+    /* 8.5px * 2 */
+    height: 17px;
+    /* 8.5px * 2 */
+    left: 66px;
+    /* 33px * 2 */
+    top: -10px;
+    /* -5px * 2 */
+    animation: fire3 0.36s ease-in-out infinite, color2 0.4s linear infinite;
+}
+
+.spark3:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    /* 5px * 2 */
+    height: 10px;
+    /* 5px * 2 */
+    top: 24px;
+    /* 12px * 2 */
+    left: -2px;
+    /* -1px * 2 */
+    background-color: #fee440;
+    border-radius: 50%;
+}
+
+.spark4 {
+    width: 14px;
+    /* 7px * 2 */
+    height: 14px;
+    /* 7px * 2 */
+    left: 54px;
+    /* 27px * 2 */
+    top: -10px;
+    /* -5px * 2 */
+    animation: fire2 0.24s ease-in-out infinite, color2 0.2s linear infinite;
+}
+
+.spark5 {
+    width: 14px;
+    /* 7px * 2 */
+    height: 14px;
+    /* 7px * 2 */
+    left: 58px;
+    /* 29px * 2 */
+    top: -10px;
+    /* -5px * 2 */
+    animation: fire3 0.45s ease-in-out infinite, color 0.2s linear infinite;
+}
+
+.spark6 {
+    width: 12px;
+    /* 6px * 2 */
+    height: 12px;
+    /* 6px * 2 */
+    left: 58px;
+    /* 29px * 2 */
+    top: -10px;
+    /* -5px * 2 */
+    animation: fire 0.35s ease-in-out infinite, color2 0.2s linear infinite;
+}
+
+@keyframes fire3 {
+    100% {
+        transform: translateX(40px) translateY(-186px);
+        /* translateX(20px) translateY(-93px) */
+        opacity: 0.3;
+    }
+}
+
+@keyframes fire2 {
+    100% {
+        transform: translateX(-10px) translateY(-180px);
+        /* translateX(-5px) translateY(-90px) */
+        opacity: 0.3;
+    }
+}
+
+@keyframes fire {
+    100% {
+        transform: translateX(-50px) translateY(-190px);
+        /* translateX(-25px) translateY(-95px) */
+        opacity: 0.3;
+    }
+}
+
+@keyframes color {
+    from {
+        background-color: #d00000;
+    }
+
+    to {
+        background-color: #0081a7;
+    }
+}
+
+@keyframes color2 {
+    from {
+        background-color: #8cff00;
+    }
+
+    to {
+        background-color: #1d2d44;
+    }
+}
+
+#click:checked~.birthday-gift #titanic {
+
+    /* Ensure it's above other elements */
+    opacity: 1;
+
+}
+
+
+
+#titanic {
+    height: auto;
+    margin-top: 8em;
+    width: 400px;
+
+
+    transform: translate(0%, -140%);
+    animation: mySlide 90s infinite forwards;
+}
+
+@keyframes mySlide {
+    from {
+        margin-right: 0%;
+    }
+
+    to {
+        margin-left: 100%;
+    }
+}
